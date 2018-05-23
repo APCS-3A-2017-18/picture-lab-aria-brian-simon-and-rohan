@@ -1,3 +1,4 @@
+
 public class IntArrayWorker
 {
   /** two dimensional matrix */
@@ -97,6 +98,53 @@ public class IntArrayWorker
           matrix[row][col] = 3;
       }
     }
+  }
+  
+  public int getCount(int number)
+  {
+      int count = 0;
+      for (int[] rowArray : matrix)
+      {
+          for (int i : rowArray)
+          {
+              if (i == number)
+              {
+                  count++;
+              }
+          }
+      }
+      
+      return count;
+  }
+  
+  public int getLargest()
+  {
+      int largest = Integer.MIN_VALUE;
+      
+      for (int[] row : matrix)
+      {
+          for (int i : row)
+          {
+              if (i > largest)
+              {
+                  largest = i;
+              }
+          }
+      }
+      
+      return largest;
+  }
+  
+  public int getColTotal(int col)
+  {
+      int total = 0;
+      
+      for (int[] row : matrix)
+      {
+          total += row[col];
+      }
+      
+      return total;
   }
  
 }
